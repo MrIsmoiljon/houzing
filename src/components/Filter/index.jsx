@@ -1,5 +1,5 @@
 import React from "react";
-import { Advanced, Container, Icon, Wrapper } from "./style";
+import { Advanced, Container, Icon, Section, Wrapper } from "./style";
 import { Button, Input } from "../Generic";
 import { Popover } from "antd";
 
@@ -7,6 +7,7 @@ const Filter = () => {
   const advancedSearch = (
     <Advanced>
       <Advanced.Title>Address</Advanced.Title>
+      <Section></Section>
       <Advanced.Title>Apartment info</Advanced.Title>
       <Advanced.Title>Price</Advanced.Title>
     </Advanced>
