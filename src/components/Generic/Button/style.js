@@ -23,7 +23,6 @@ const getType = (type) => {
 
 const Container = styled.div`
   display: flex;
-
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;

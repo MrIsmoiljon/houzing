@@ -2,7 +2,6 @@ import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
 import {
-  Body,
   Container,
   Link,
   Logo,
@@ -38,9 +37,8 @@ const Navbar = () => {
           </Button>
         </NavbarWrapper>
       </Container>
-      <Body>
-        <Outlet />
-      </Body>
+
+      <Outlet />
     </Wrapper>
   );
 };

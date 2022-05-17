@@ -48,11 +48,6 @@ const NavbarBody = styled.div`
   }
 `;
 
-const Body = styled.div`
-  display: flex;
-  width: 100%;
-`;
-
 const Link = styled(NavLink)`
   color: white;
   text-decoration: none;
@@ -77,4 +72,4 @@ Logo.Title = styled("div")`
   font-weight: 500;
 `;
 
-export { Wrapper, Container, Body, NavbarWrapper, NavbarBody, Link, Logo };
+export { Wrapper, Container, NavbarWrapper, NavbarBody, Link, Logo };
