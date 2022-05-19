@@ -10,8 +10,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-
-  padding: 0 100px;
+  margin: 10px 0;
+  padding: 0 130px;
 `;
 
 const Wrapper = styled.div`
@@ -57,7 +57,7 @@ Advanced.Title = styled.div`
 
 const Section = styled.div`
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   justify-content: flex-end;
 `;
 
