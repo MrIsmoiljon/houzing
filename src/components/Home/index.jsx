@@ -1,4 +1,5 @@
 import React from "react";
+import Recommended from "../Recommended";
 import Filter from "../Filter";
 import Carousel from "./Carousel";
 import { Container } from "./style";
@@ -8,6 +9,7 @@ const Home = () => {
     <Container>
       <Filter />
       <Carousel />
+      <Recommended />
     </Container>
   );
 };
