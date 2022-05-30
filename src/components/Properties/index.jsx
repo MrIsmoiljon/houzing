@@ -3,23 +3,27 @@ import Filter from "../Filter";
 import Card from "../Card";
 import { Container, Total, Wrapper } from "./style";
 import { useQuery } from "react-query";
+import { useLocation } from "react-router-dom";
 
 const { REACT_APP_BASE_URL: url } = process.env;
 export const Properties = () => {
   const [data, setData] = useState([]);
+  const { search } = useLocation();
 
   useQuery(
-    "get data",
+    ["get data", search],
     () => {
-      return fetch(`${url}/v1/houses/list`).then((res) => res.json());
+      return fetch(`${url}/v1/houses/list${search}`).then((res) => res.json());
     },
 
     {
       onSuccess: (res) => {
-        console.log(res);
+        setData(res?.data || []);
       },
     }
   );
+
+  console.log(data);
 
   return (
     <Container>
@@ -30,13 +34,9 @@ export const Properties = () => {
       </div>
       <Total> {data?.length} Total</Total>
       <Wrapper>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {data.map((value) => {
+          return <Card key={value?.id} info={value} />;
+        })}
       </Wrapper>
     </Container>
   );
