@@ -23,8 +23,6 @@ export const Properties = () => {
     }
   );
 
-  console.log(data);
-
   return (
     <Container>
       <Filter />
@@ -34,7 +32,7 @@ export const Properties = () => {
       </div>
       <Total> {data?.length} Total</Total>
       <Wrapper>
-        {data.map((value) => {
+        {data?.map((value) => {
           return <Card key={value?.id} info={value} />;
         })}
       </Wrapper>

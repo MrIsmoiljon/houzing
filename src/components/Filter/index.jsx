@@ -2,24 +2,42 @@ import React from "react";
 import { Advanced, Container, Icon, Section, Wrapper } from "./style";
 import { Button, Input } from "../Generic";
 import { Popover } from "antd";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import useSearch from "../../hooks/useSearch";
+import UseReplace from "../../hooks/useReplace";
 
 const Filter = () => {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+
+  const query = useSearch();
 
   const onChange = ({ target }) => {
     const { value, name } = target;
-    navigate(`${pathname}?${name}=${value} `);
+    navigate(`${UseReplace(name, value)} `);
   };
 
   const advancedSearch = (
     <Advanced>
       <Advanced.Title>Address</Advanced.Title>
       <Section>
-        <Input placeholder="Country" />
-        <Input placeholder="Region" />
-        <Input onChange={onChange} placeholder="City" name="city" />
+        <Input
+          onChange={onChange}
+          defaultValue={query.get("country")}
+          name="country"
+          placeholder="Country"
+        />
+        <Input
+          onChange={onChange}
+          defaultValue={query.get("region")}
+          name="region"
+          placeholder="Region"
+        />
+        <Input
+          onChange={onChange}
+          defaultValue={query.get("city")}
+          name="city"
+          placeholder="City"
+        />
         <Input placeholder="Zip code" />
       </Section>
       <Advanced.Title>Apartment info</Advanced.Title>
